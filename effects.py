@@ -43,6 +43,7 @@ alleffects = {
 		EffectType.POSITIVE),
 	'+heat' : Effect('heat', 			['C', 'U', 'V'],
 		EffectType.POSITIVE),
+
 	'-hp' : Effect('hp', 				['E', 'H', 'P'],
 		EffectType.NEGATIVE),
 	'-stamina' : Effect('stamina', 		['F', 'J', 'R'],
@@ -59,6 +60,7 @@ alleffects = {
 		EffectType.NEGATIVE),
 	'-heat' : Effect('heat', 			['B', 'Q', 'X'],
 		EffectType.NEGATIVE),
+	
 	'invis' : Effect('invisibility', 	['L', 'V', 'X'],
 		EffectType.POSITIVE)
 }

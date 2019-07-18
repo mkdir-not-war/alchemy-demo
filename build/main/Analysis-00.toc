@@ -151,34 +151,6 @@
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\__init__.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.__about__',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.six',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.appdirs',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.version',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.utils',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
-   'PYMODULE'),
   ('pkg_resources._vendor.pyparsing',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\pyparsing.py',
@@ -211,25 +183,53 @@
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\ctypes\\macholib\\framework.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.specifiers',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.markers',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
-   'PYMODULE'),
   ('pkg_resources._vendor.packaging._structures',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.requirements',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.version',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.utils',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.__about__',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging._compat',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.requirements',
+  ('pkg_resources._vendor.packaging.specifiers',
    'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.appdirs',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.six',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.markers',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
   ('__main__',
    'C:\\Users\\Gavin '
@@ -835,49 +835,13 @@
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\__init__.py',
    'PYMODULE'),
-  ('setuptools._vendor.six',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\six.py',
-   'PYMODULE'),
-  ('setuptools._vendor.pyparsing',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\pyparsing.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging._structures',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging._compat',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.version',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\version.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.utils',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.__about__',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
-   'PYMODULE'),
   ('setuptools._vendor.packaging.markers',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging.specifiers',
+  ('setuptools._vendor.packaging',
    'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('setuptools._vendor',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\__init__.py',
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
    'PYMODULE'),
   ('setuptools._vendor.packaging.requirements',
    'c:\\users\\gavin '
@@ -894,6 +858,42 @@
   ('setuptools.extern',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\extern\\__init__.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._compat',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('setuptools._vendor.pyparsing',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\pyparsing.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.version',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\version.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.utils',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.specifiers',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.__about__',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
+   'PYMODULE'),
+  ('setuptools._vendor',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\__init__.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._structures',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('setuptools._vendor.six',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\setuptools\\_vendor\\six.py',
    'PYMODULE'),
   ('setuptools.msvc',
    'c:\\users\\gavin '
@@ -1803,6 +1803,10 @@
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\datetime.py',
    'PYMODULE'),
+  ('tracemalloc',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\tracemalloc.py',
+   'PYMODULE'),
   ('typing',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\typing.py',
@@ -1810,22 +1814,6 @@
   ('stringprep',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\stringprep.py',
-   'PYMODULE'),
-  ('_py_abc',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\_py_abc.py',
-   'PYMODULE'),
-  ('fnmatch',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\fnmatch.py',
-   'PYMODULE'),
-  ('struct',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\struct.py',
-   'PYMODULE'),
-  ('_compat_pickle',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\_compat_pickle.py',
    'PYMODULE'),
   ('__future__',
    'c:\\users\\gavin '
@@ -1926,14 +1914,6 @@
   ('platform',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\platform.py',
-   'PYMODULE'),
-  ('token',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\token.py',
-   'PYMODULE'),
-  ('tokenize',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\tokenize.py',
    'PYMODULE'),
   ('urllib.parse',
    'c:\\users\\gavin '
@@ -2167,9 +2147,21 @@
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\string.py',
    'PYMODULE'),
+  ('_compat_pickle',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('pickle',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\pickle.py',
+   'PYMODULE'),
   ('logging',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('pprint',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\pprint.py',
    'PYMODULE'),
   ('unittest.case',
    'c:\\users\\gavin '
@@ -2178,6 +2170,10 @@
   ('unittest.suite',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\unittest\\suite.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\fnmatch.py',
    'PYMODULE'),
   ('unittest.loader',
    'c:\\users\\gavin '
@@ -2202,6 +2198,38 @@
   ('doctest',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\doctest.py',
+   'PYMODULE'),
+  ('token',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\token.py',
+   'PYMODULE'),
+  ('struct',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\struct.py',
+   'PYMODULE'),
+  ('gettext',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\gettext.py',
+   'PYMODULE'),
+  ('copy',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\copy.py',
+   'PYMODULE'),
+  ('textwrap',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\textwrap.py',
+   'PYMODULE'),
+  ('argparse',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\argparse.py',
+   'PYMODULE'),
+  ('tokenize',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\tokenize.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\_py_abc.py',
    'PYMODULE'),
   ('stat',
    'c:\\users\\gavin '
@@ -2242,34 +2270,6 @@
   ('os',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\os.py',
-   'PYMODULE'),
-  ('gettext',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\gettext.py',
-   'PYMODULE'),
-  ('copy',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\copy.py',
-   'PYMODULE'),
-  ('textwrap',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\textwrap.py',
-   'PYMODULE'),
-  ('argparse',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\argparse.py',
-   'PYMODULE'),
-  ('pprint',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\pprint.py',
-   'PYMODULE'),
-  ('pickle',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\pickle.py',
-   'PYMODULE'),
-  ('tracemalloc',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\tracemalloc.py',
    'PYMODULE'),
   ('ingredients',
    'C:\\Users\\Gavin Grant\\Documents\\code\\tests\\alchemy\\ingredients.py',
@@ -2382,25 +2382,25 @@
    'C:\\Users\\Gavin '
    'Grant\\Documents\\code\\tests\\alchemy\\build\\main\\base_library.zip',
    'DATA'),
-  ('lib2to3\\Grammar.txt',
+  ('lib2to3\\PatternGrammar3.7.3.final.0.pickle',
    'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\Grammar.txt',
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\PatternGrammar3.7.3.final.0.pickle',
    'DATA'),
   ('Include\\pyconfig.h',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\Include\\pyconfig.h',
    'DATA'),
+  ('lib2to3\\Grammar3.7.3.final.0.pickle',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\Grammar3.7.3.final.0.pickle',
+   'DATA'),
   ('lib2to3\\PatternGrammar.txt',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\PatternGrammar.txt',
    'DATA'),
-  ('lib2to3\\PatternGrammar3.7.3.final.0.pickle',
+  ('lib2to3\\Grammar.txt',
    'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\PatternGrammar3.7.3.final.0.pickle',
-   'DATA'),
-  ('lib2to3\\Grammar3.7.3.final.0.pickle',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\Grammar3.7.3.final.0.pickle',
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\Grammar.txt',
    'DATA'),
   ('lib2to3\\tests\\data\\README',
    'c:\\users\\gavin '

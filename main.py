@@ -16,7 +16,7 @@ class Alchemy():
 		self.steps = {}
 		for i in range(10):
 			self.steps[i] = ('wait', None, None)
-		self.possibleactions = ['add', 'crush and add', 'heat', 'wait']
+		self.possibleactions = ['add', 'crush and add', 'heat', 'cool', 'wait']
 
 	def reset(self):
 		self.base = None
@@ -92,7 +92,7 @@ def brewinput(userinput, alchemy):
 			if not actioninput in alchemy.possibleactions:
 				print("'%s' is not a viable action." % actioninput)
 				return False
-			if actioninput in ['wait', 'heat']:
+			if actioninput in ['wait', 'heat', 'cool']:
 				alchemy.steps[stepnum] = (actioninput, None, None)
 				return False
 			iteminput = input("what do you want to %s?: " % actioninput)

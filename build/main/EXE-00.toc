@@ -144,25 +144,25 @@
    'C:\\Users\\Gavin '
    'Grant\\Documents\\code\\tests\\alchemy\\build\\main\\base_library.zip',
    'DATA'),
-  ('lib2to3\\Grammar.txt',
+  ('lib2to3\\PatternGrammar3.7.3.final.0.pickle',
    'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\Grammar.txt',
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\PatternGrammar3.7.3.final.0.pickle',
    'DATA'),
   ('Include\\pyconfig.h',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\Include\\pyconfig.h',
    'DATA'),
+  ('lib2to3\\Grammar3.7.3.final.0.pickle',
+   'c:\\users\\gavin '
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\Grammar3.7.3.final.0.pickle',
+   'DATA'),
   ('lib2to3\\PatternGrammar.txt',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\PatternGrammar.txt',
    'DATA'),
-  ('lib2to3\\PatternGrammar3.7.3.final.0.pickle',
+  ('lib2to3\\Grammar.txt',
    'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\PatternGrammar3.7.3.final.0.pickle',
-   'DATA'),
-  ('lib2to3\\Grammar3.7.3.final.0.pickle',
-   'c:\\users\\gavin '
-   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\Grammar3.7.3.final.0.pickle',
+   'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\lib2to3\\Grammar.txt',
    'DATA'),
   ('lib2to3\\tests\\data\\README',
    'c:\\users\\gavin '
@@ -176,7 +176,7 @@
  [],
  False,
  False,
- 1563466588,
+ 1563473976,
  [('run.exe',
    'c:\\users\\gavin '
    'grant\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-32bit\\run.exe',

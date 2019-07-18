@@ -172,9 +172,8 @@ def brew(base, steps):
 	compoundsdict = base.compounds.copy()
 
 	max_heat = compounds.heatlevels['hot'][0] # minimum heat = 0
-	stepsperheat = 3
+	stepsperheat = 4
 
-	heattimer = 0
 	heatlevel = 0
 	turnsabovetemp = [0] * (max_heat)
 
@@ -183,10 +182,11 @@ def brew(base, steps):
 		action, item, amount = step
 		# 1) destroy compounds that hit their tolerance
 		destroyedcompounds = []
+		#print(compoundsdict, heatlevel)
 		for c in compoundsdict:
 			compound = compounds.allcompounds[c]
 			if not compound.max_temp is None:
-				if turnsabovetemp[compound.max_temp] >= 2:
+				if turnsabovetemp[compound.max_temp] >= compound.tolerance:
 					destroyedcompounds.append(c)
 		for c in destroyedcompounds:
 			del compoundsdict[c]
@@ -210,17 +210,14 @@ def brew(base, steps):
 		# 4) update heat level and turns above temp
 		for i in range(0, min(heatlevel, max_heat)):
 			turnsabovetemp[i] += 1
-		for i in range(heatlevel+1, max_heat):
+		for i in range(heatlevel, max_heat):
 			turnsabovetemp[i] = 0
 		if (action == 'heat'):
 			if (heatlevel < max_heat):
 				heatlevel += 1
-			heattimer = stepsperheat
-		heattimer -= 1
-		if (heattimer == 0):
+		if (action == 'cool'):
 			if (heatlevel > 0):
 				heatlevel -= 1
-			heattimer = stepsperheat
 
 	# bring potion down to cool
 	while (heatlevel >= 0):
@@ -251,7 +248,9 @@ def distill(compoundlist):
 
 ingredients = {
 	# bases
-	'water' : Ingredient("water", {'A':1, 'B':1, 'C':1, 'D':1}, 
+	'water' : Ingredient("water", {'A':1}, 
+		base=True),
+	'juice' : Ingredient("water", {'A':1, 'B':1, 'C':1, 'D':1}, 
 		base=True),
 	'blood' : Ingredient("blood", {'D':2, 'E':2, 'G':1, 'H':1}, 
 		base=True),
@@ -276,6 +275,8 @@ ingredients = {
 	'powdered scale' : Ingredient("powdered scale", {'B':2, 'C':2, 'I':2}, 
 		crushed="blood"),
 	# plants
+	'apple' : Ingredient("apple", {'A':1, 'C':1, 'G':1},
+		crushed="juice"),
 	'drake thistle' : Ingredient("drake thistle", {'C':1, 'E':1, 'G':1, 'H':2}),
 	'milkweed' : Ingredient("milkweed", {'C':1, 'F':1, 'H':2, 'O':1})
 }
@@ -289,11 +290,11 @@ def printingredients():
 		print('-'*12)
 
 def printtestpot():
-	pot_comp = {'A':2, 'C':4, 'E':4, 'H':2}
+	pot_comp = {'A':2, 'E':1, 'G':1, 'N':2}
 	test_pot = Ingredient('test potion', pot_comp, base=True)
 	print(test_pot.name)
 	test_pot.printeffects()
 
-#if __name__=='__main__':
-#	#printtestpot()
-#	printingredients()
+if __name__=='__main__':
+	printtestpot()
+	#printingredients()
