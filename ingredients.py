@@ -124,6 +124,48 @@ class Ingredient():
 		for effect, potency in self.effects.values():
 			print("%s: %s" % (effect.stat, str(potency)))
 
+def resolvereactions(compoundsdict, heattier):
+	compoundlist = sorted(
+		list(compoundsdict.items()),
+		key=lambda c: compounds.allcompounds[c[0]].reactivity,
+		reverse=True)
+	compoundlist = [c for c in compoundlist \
+		if compounds.allcompounds[c[0]].reactivity >= 0]
+	'''
+	NOTE: when two compounds react, 
+	the result's amount is double the minimum
+	of the amounts of the two compounds, 
+	with the greater amount having leftover
+	'''
+	reacting = []
+	for compound, amount in compoundlist:
+		reactions = None
+		if heattier == 'cold':
+			reactions = compounds.allcompounds[compound].cold_reactions
+		elif heattier == 'warm':
+			reactions = compounds.allcompounds[compound].warm_reactions
+		elif heattier == 'hot':
+			reactions = compounds.allcompounds[compound].hot_reactions
+		for r in reactions:
+			if r in compoundsdict:
+				reacting.append((compound, r, reactions[r],
+					min(amount, compoundsdict[r])))
+	new_compounds = {}
+	for r1, r2, result, amount in reacting:
+		if (r1 in compoundsdict and r2 in compoundsdict):
+			if (compoundsdict[r1] > compoundsdict[r2]):
+				del compoundsdict[r2]
+				compoundsdict[r1] -= amount
+			elif (compoundsdict[r1] < compoundsdict[r2]):
+				del compoundsdict[r1]
+				compoundsdict[r2] -= amount
+			else:
+				# equal amounts, delete both
+				del compoundsdict[r1]
+				del compoundsdict[r2]
+			new_compounds[result] = amount * 2
+	return new_compounds
+
 # base = Ingredient
 # steps = [(<action>, <ingredient>/None)]
 def brew(base, steps):
@@ -162,48 +204,8 @@ def brew(base, steps):
 					compoundsdict[compound] = amt
 
 		# 3) resolve any reactions in order of reactivity
-		compoundlist = sorted(
-			list(compoundsdict.items()),
-			key=lambda c: compounds.allcompounds[c[0]].reactivity,
-			reverse=True)
-		compoundlist = [c for c in compoundlist \
-			if compounds.allcompounds[c[0]].reactivity >= 0]
-		'''
-		NOTE: when two compounds react, 
-		the result's amount is double the minimum
-		of the amounts of the two compounds, 
-		with the greater amount having leftover
-		'''
-		reacting = []
-		for compound, amount in compoundlist:
-			heattier = compounds.heatlevels[heatlevel]
-			reactions = None
-			if heattier == 'cold':
-				reactions = compounds.allcompounds[compound].cold_reactions
-			elif heattier == 'warm':
-				reactions = compounds.allcompounds[compound].warm_reactions
-			elif heattier == 'hot':
-				reactions = compounds.allcompounds[compound].hot_reactions
-			for r in reactions:
-				if r in compoundsdict:
-					reacting.append((compound, r, reactions[r],
-						min(amount, compoundsdict[r])))
-		new_compounds = {}
-		for r1, r2, result, amount in reacting:
-			if (r1 in compoundsdict and r2 in compoundsdict):
-				if (compoundsdict[r1] > compoundsdict[r2]):
-					del compoundsdict[r2]
-					compoundsdict[r1] -= amount
-				elif (compoundsdict[r1] < compoundsdict[r2]):
-					del compoundsdict[r1]
-					compoundsdict[r2] -= amount
-				else:
-					# equal amounts, delete both
-					del compoundsdict[r1]
-					del compoundsdict[r2]
-				new_compounds[result] = amount * 2
-		compoundsdict.update(new_compounds)
-
+		heattier = compounds.heatlevels[heatlevel]
+		compoundsdict.update(resolvereactions(compoundsdict, heattier))
 
 		# 4) update heat level and turns above temp
 		for i in range(0, min(heatlevel, max_heat)):
@@ -220,9 +222,23 @@ def brew(base, steps):
 				heatlevel -= 1
 			heattimer = stepsperheat
 
+	# bring potion down to cool
+	while (heatlevel >= 0):
+		heatlevel -= 1
+		if (heatlevel >= 0):
+			heattier = compounds.heatlevels[heatlevel]
+		compoundsdict.update(resolvereactions(compoundsdict, heattier))
+	
+	# resolve all cold reactions until stable
+	new_dict = resolvereactions(compoundsdict, "cold")
+	while (len(new_dict) > 0):
+		compoundsdict.update(new_dict)
+		new_dict = resolvereactions(compoundsdict, "cold")
+
 	result = Ingredient("%s potion" % base.name, compoundsdict, base=True)
 	return result
 
+'''
 # should this even be a possible action?
 def distill(compoundlist):
 	new_compounds = {}
@@ -231,6 +247,7 @@ def distill(compoundlist):
 		mult = (compounds.allcompounds[c].reactivity + 1)
 		new_compounds[c] = compoundlist[c] * mult
 	return new_compounds
+'''
 
 ingredients = {
 	# bases
@@ -277,11 +294,6 @@ def printtestpot():
 	print(test_pot.name)
 	test_pot.printeffects()
 
-	test_pot.compounds = distill(test_pot.compounds)
-	test_pot.calculateeffects(test_pot.compounds)
-	print('distilled '+ test_pot.name)
-	test_pot.printeffects()
-
-if __name__=='__main__':
-	printtestpot()
-	#printingredients()
+#if __name__=='__main__':
+#	#printtestpot()
+#	printingredients()

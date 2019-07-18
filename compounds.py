@@ -33,7 +33,7 @@ class Compound():
 		self.tolerance = tolerance
 		self.max_temp = max_temp
 
-
+## make sure there are no cycles in cold reactions!
 allcompounds = {
 	### common in nature (12) ###
 
@@ -44,7 +44,7 @@ allcompounds = {
 		tolerance=5, 
 		cold_reactions={},
 		warm_reactions={'H':'Z'}, 
-		hot_reactions={}),
+		hot_reactions={'E':'K', 'F':'M', 'G': 'W', 'P':'U', 'Q':'U'}),
 	'B' : Compound(
 		reactivity=4, 
 		max_temp=2, 
@@ -66,27 +66,27 @@ allcompounds = {
 		cold_reactions={},
 		warm_reactions={'H':'Z'}, 
 		hot_reactions={}),
-	'E' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'E' : Compound(
+		reactivity=3, 
+		max_temp=0, 
+		tolerance=5, 
 		cold_reactions={},
 		warm_reactions={}, 
-		hot_reactions={}),
-	'F' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+		hot_reactions={'A':'K'}),
+	'F' : Compound(
+		reactivity=3, 
+		max_temp=1, 
+		tolerance=5, 
 		cold_reactions={},
 		warm_reactions={}, 
-		hot_reactions={}),
-	'G' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+		hot_reactions={'A':'M'}),
+	'G' : Compound(
+		reactivity=2, 
+		max_temp=2, 
+		tolerance=3, 
 		cold_reactions={},
 		warm_reactions={}, 
-		hot_reactions={}),
+		hot_reactions={'A': 'W'}),
 	# -hp; boils off; makes inert at warm temps with common stuff
 	'H' : Compound(
 		reactivity=2, 
@@ -95,24 +95,24 @@ allcompounds = {
 		cold_reactions={},
 		warm_reactions={'A':'Z', 'B':'Z', 'D':'Z'}, 
 		hot_reactions={'N':'V', 'P':'V', 'Q':'W'}),
-	'I' : Compound( ############################
-		reactivity=-1, 
+	'I' : Compound(
+		reactivity=3, 
 		max_temp=None, 
 		tolerance=None, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
-	'J' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'J' : Compound(
+		reactivity=2, 
+		max_temp=3, 
+		tolerance=1, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
-	'K' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'K' : Compound(
+		reactivity=2, 
+		max_temp=3, 
+		tolerance=2, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
@@ -127,10 +127,10 @@ allcompounds = {
 
 	### rare in nature (6) ###
 
-	'M' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'M' : Compound(
+		reactivity=3, 
+		max_temp=2, 
+		tolerance=4, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
@@ -142,10 +142,10 @@ allcompounds = {
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={'H':'V'}),
-	'O' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'O' : Compound(
+		reactivity=4, 
+		max_temp=3, 
+		tolerance=4, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
@@ -163,56 +163,56 @@ allcompounds = {
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={'H':'W'}),
-	'R' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'R' : Compound( 
+		reactivity=3, 
+		max_temp=1, 
+		tolerance=6, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
 
 	### synthetic (6) ###
 
-	'S' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'S' : Compound(
+		reactivity=1, 
+		max_temp=3, 
+		tolerance=3, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
-	'T' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'T' : Compound( 
+		reactivity=1, 
+		max_temp=3, 
+		tolerance=3, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
-	'U' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'U' : Compound( 
+		reactivity=0, 
+		max_temp=2, 
+		tolerance=3, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
 	# invis, heat; reactions to create this are only hot (H + P/Q -> V)
-	'V' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'V' : Compound(
+		reactivity=1, 
+		max_temp=2, 
+		tolerance=2, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
-	'W' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'W' : Compound( 
+		reactivity=1, 
+		max_temp=3, 
+		tolerance=0, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
-	'X' : Compound( ############################
-		reactivity=-1, 
-		max_temp=None, 
-		tolerance=None, 
+	'X' : Compound(
+		reactivity=1, 
+		max_temp=3, 
+		tolerance=2, 
 		cold_reactions={},
 		warm_reactions={}, 
 		hot_reactions={}),
@@ -270,5 +270,5 @@ def check_compound_reactions():
 	else:
 		return True
 
-if __name__=='__main__':
-	print(check_compound_reactions())
+#if __name__=='__main__':
+#	print(check_compound_reactions())

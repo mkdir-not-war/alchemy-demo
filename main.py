@@ -11,7 +11,7 @@ actions:
 class Alchemy():
 	def __init__(self):
 		self.potions = []
-		self.inputhandler = maininput
+		self.inputhandler = brewinput
 		self.base = None
 		self.steps = {}
 		for i in range(10):
@@ -19,7 +19,6 @@ class Alchemy():
 		self.possibleactions = ['add', 'crush and add', 'heat', 'wait']
 
 	def reset(self):
-		self.inputhandler = maininput
 		self.base = None
 		for i in range(10):
 			self.steps[i] = ('wait', None, None)
@@ -37,17 +36,34 @@ def printsteps(alchemy):
 		print('\t', i+1, '\t', action, item, amount)
 	print('\t', '11', '\t', 'bottle it up!')
 
+helptext = """ commands:
+	potions \t- view all potions and their effects
+	clear \t\t- clear all potions
+	print \t\t- view base and steps in current recipe
+	new \t\t- clear base and steps in current recipe
+	base \t\t- enter a base into the current recipe 
+	\t\t(will overwrite)
+	ingredients \t- view names of all ingredients
+	actions \t- view all possible actions in a step
+	step N \t\t- prompts an action, ingredient and 
+	\t\tamount if applicable for step N 
+	\t\t(will overwrite)
+	brew \t\t- execute the steps in the current recipe, 
+	\t\tadds the potion to potions and starts a new recipe
+	help \t\t- bring up this menu
+	quit \t\t- exit the program
+"""
+
 def brewinput(userinput, alchemy):
 	if userinput == 'help':
-		print('ingredients | actions | base | print | step N | brew | stop | quit')
+		print(helptext)
 	elif userinput == 'quit':
-		exit(1)
-	elif userinput == 'stop':
-		alchemy.inputhandler = maininput
+		return True
 	elif userinput == 'ingredients':
 		print("INGREDIENTS: ")
 		for i in ingredients:
-			print('\t', i)
+			base = '[base]' if i in bases else ''
+			print('\t', i, base)
 	elif userinput == 'actions':
 		print("ACTIONS: ")
 		for i in alchemy.possibleactions:
@@ -67,27 +83,27 @@ def brewinput(userinput, alchemy):
 			stepnum = int(splinput[1])
 			if (stepnum < 1 or stepnum > 11):
 				print("There is no step %s!" % stepnum)
-				return
+				return False
 			elif (stepnum == 11):
 				print("Step 11 is to bottle the concoction!")
-				return
+				return False
 			stepnum = stepnum-1
 			actioninput = input("action: ")
 			if not actioninput in alchemy.possibleactions:
 				print("'%s' is not a viable action." % actioninput)
-				return
+				return False
 			if actioninput in ['wait', 'heat']:
 				alchemy.steps[stepnum] = (actioninput, None, None)
-				return
+				return False
 			iteminput = input("what do you want to %s?: " % actioninput)
 			if not iteminput in ingredients:
 				print("'%s' is not a viable ingredient." % iteminput)
-				return
+				return False
 			amountinput = int(input("amount of %s: " % iteminput))
 			if amountinput <= 0:
 				print("You cannot %s %s amount of %s." % (
 					actioninput, amountinput, iteminput))
-				return
+				return False
 			alchemy.steps[stepnum] = (actioninput, iteminput, amountinput)
 
 	elif userinput == 'brew':
@@ -97,23 +113,22 @@ def brewinput(userinput, alchemy):
 			alchemy.potions.append(potion)
 			print(potion.name)
 			potion.printeffects()
-			alchemy.inputhandler = maininput
 			alchemy.reset()
 		else:
 			print('You need a base before you brew the potion.')
-	else:
-		brewinput('help', alchemy)
-
-def maininput(userinput, alchemy):
-	if userinput == 'help':
-		print('clear | potions | brew | quit')
 	elif userinput == 'clear':
+		if (len(alchemy.potions)<=0):
+			print("No potions.")
+			return False
 		alchemy.potions.clear()
 		print("Cleared potions.")
+	elif userinput == 'new':
+		alchemy.reset()
+		print("Cleared current recipe.")
 	elif userinput == 'potions':
 		if (len(alchemy.potions)<=0):
 			print("No potions.")
-			return
+			return False
 		print()
 		print("POTIONS: ")
 		for p in range(len(alchemy.potions)):
@@ -122,18 +137,17 @@ def maininput(userinput, alchemy):
 			alchemy.potions[p].printeffects()
 			print('-' * 12)
 			print()
-	elif userinput == 'brew':
-		alchemy.inputhandler = brewinput
-	elif userinput == 'quit':
-		exit(1)
 	else:
-		maininput('help', alchemy)
+		print(helptext)
+	return False
 
 def main():
 	alchemy = Alchemy()
-	while(1):
+	print(helptext)
+	quit = False
+	while(not quit):
 		userinput = input('>> ')
-		alchemy.inputhandler(userinput, alchemy)
+		quit = alchemy.inputhandler(userinput, alchemy)
 
 if __name__=='__main__':
 	main()
