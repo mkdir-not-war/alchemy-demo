@@ -61,19 +61,25 @@ class Ingredient():
 
 	def calculateeffects(self, compounds):
 		max_effects_per_ingredient = 3
-		result = {} # [(effect, potency), ...]
+		result = {} # [(effect, potency, duration), ...]
 		compound_vector = [compounds[i] 
 							if i in compounds.keys() else 0 
 							for i in list(compound_names)]	
 		scores, effects = effect_ingredient_similarity(
 			tuple(compound_vector), max_effects_per_ingredient)
 		for e_index in range(len(effects)):
+
 			effect = effects[e_index]
 			compound_potency = potency(compounds, effect.signature)
-			effect_potency = int(max((10.0 * (compound_potency) * \
-				scores[e_index]), 0))
-			if (effect.effecttype == EffectType.NEGATIVE):
+			effect_potency = int(max((10.0 * scores[e_index]), 0))
+			duration = int(compound_potency * 5)
+			if (effect.effecttype == EffectType.RESTORE or
+				effect.effecttype == EffectType.DEPLETE):
+				duration = None
+			if (effect.effecttype == EffectType.DEPLETE or
+				effect.effecttype == EffectType.DEBUFF):
 				effect_potency *= -1
+
 			# sum up negative and positive effects
 			if (effect_potency != 0):
 				if (effect.stat in result):
@@ -81,7 +87,7 @@ class Ingredient():
 					if (result[effect.stat][1]) == 0:
 						del result[effect.stat]
 				else:
-					result[effect.stat] = [effect, effect_potency]
+					result[effect.stat] = [effect, effect_potency, duration]
 		return result
 
 	def namepotion(self, basename):
@@ -110,9 +116,11 @@ class Ingredient():
 
 		if (abs(min_potency) > max_potency):
 			basename = basename[:-6] + 'poison'
-			name = '%s of deplete %s' % (basename, ' and '.join(min_neg_effects))
+			name = '%s of deplete %s' % (basename, ' and '.join(
+				min_neg_effects))
 		else:
-			name = '%s of augment %s' % (basename, ' and '.join(max_pos_effects))
+			name = '%s of augment %s' % (basename, ' and '.join(
+				max_pos_effects))
 
 		return name
 
@@ -121,8 +129,14 @@ class Ingredient():
 		return result
 
 	def printeffects(self):
-		for effect, potency in self.effects.values():
-			print("%s: %s" % (effect.stat, str(potency)))
+		for effect, potency, duration in self.effects.values():
+			effecttype = effect.effecttype
+			duration_str = ''
+			if (not duration is None):
+				duration_str = '(for %s turns)' % str(duration)
+
+			print("%s: %s %s" % (
+				effect.stat, str(potency), duration_str))
 
 def resolvereactions(compoundsdict, heattier):
 	compoundlist = sorted(
@@ -235,17 +249,6 @@ def brew(base, steps):
 	result = Ingredient("%s potion" % base.name, compoundsdict, base=True)
 	return result
 
-'''
-# should this even be a possible action?
-def distill(compoundlist):
-	new_compounds = {}
-	for c in compoundlist:
-		# reactivity -1 -> 0: remove the compound
-		mult = (compounds.allcompounds[c].reactivity + 1)
-		new_compounds[c] = compoundlist[c] * mult
-	return new_compounds
-'''
-
 ingredients = {
 	# bases
 	'water' : Ingredient("water", {'A':1}, 
@@ -296,5 +299,5 @@ def printtestpot():
 	test_pot.printeffects()
 
 if __name__=='__main__':
-	printtestpot()
-	#printingredients()
+	#printtestpot()
+	printingredients()

@@ -2,8 +2,10 @@ from string import ascii_uppercase as compound_names
 from enum import Enum
 
 class EffectType(Enum):
-	POSITIVE = 1
-	NEGATIVE = 2
+	RESTORE = 1
+	DEPLETE = 2
+	BUFF = 3
+	DEBUFF = 4
 
 class Effect():
 	def __init__(self, stat, signature, effecttype):
@@ -28,40 +30,40 @@ class Effect():
 
 alleffects = {
 	'+hp' : Effect('hp', 				['A', 'D', 'M'],
-		EffectType.POSITIVE),
+		EffectType.RESTORE),
 	'+stamina' : Effect('stamina', 		['A', 'B', 'O'],
-		EffectType.POSITIVE),
+		EffectType.RESTORE),
 	'+speed' : Effect('speed', 			['C', 'O', 'S'],
-		EffectType.POSITIVE),
+		EffectType.BUFF),
 	'+defense' : Effect('defense', 		['A', 'M', 'T'],
-		EffectType.POSITIVE),
+		EffectType.BUFF),
 	'+spdefense' : Effect('spdefense', 	['E', 'G', 'N'],
-		EffectType.POSITIVE),
+		EffectType.BUFF),
 	'+attack' : Effect('attack', 		['B', 'F', 'W'],
-		EffectType.POSITIVE),
+		EffectType.BUFF),
 	'+spattack' : Effect('spattack', 	['E', 'K', 'X'],
-		EffectType.POSITIVE),
+		EffectType.BUFF),
 	'+heat' : Effect('heat', 			['C', 'U', 'V'],
-		EffectType.POSITIVE),
+		EffectType.BUFF),
 
 	'-hp' : Effect('hp', 				['E', 'H', 'P'],
-		EffectType.NEGATIVE),
+		EffectType.DEPLETE),
 	'-stamina' : Effect('stamina', 		['F', 'J', 'R'],
-		EffectType.NEGATIVE),
+		EffectType.DEPLETE),
 	'-speed' : Effect('speed', 			['D', 'I', 'N'],
-		EffectType.NEGATIVE),
+		EffectType.DEBUFF),
 	'-defense' : Effect('defense', 		['I', 'N', 'W'],
-		EffectType.NEGATIVE),
+		EffectType.DEBUFF),
 	'-spdefense' : Effect('spdefense', 	['J', 'R', 'T'],
-		EffectType.NEGATIVE),
+		EffectType.DEBUFF),
 	'-attack' : Effect('attack', 		['H', 'K', 'S'],
-		EffectType.NEGATIVE),
+		EffectType.DEBUFF),
 	'-spattack' : Effect('spattack', 	['D', 'G', 'P'],
-		EffectType.NEGATIVE),
+		EffectType.DEBUFF),
 	'-heat' : Effect('heat', 			['B', 'Q', 'X'],
-		EffectType.NEGATIVE),
+		EffectType.DEBUFF),
 	
 	'invis' : Effect('invisibility', 	['L', 'V', 'X'],
-		EffectType.POSITIVE)
+		EffectType.BUFF)
 }
 	
