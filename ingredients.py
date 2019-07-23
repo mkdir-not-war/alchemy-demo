@@ -134,8 +134,16 @@ class Ingredient():
 			name = '%s of deplete %s' % (basename, ' and '.join(
 				min_neg_effects))
 		else:
-			name = '%s of augment %s' % (basename, ' and '.join(
-				max_pos_effects))
+			effectname = ''
+			if ('hp' in max_pos_effects):
+				if (len(max_pos_effects) > 1):
+					effectname = 'restore and augment'
+				else:
+					effectname = 'restore'
+			else:
+				effectname = 'augment'
+			name = '%s of %s %s' % (basename, effectname,
+				' and '.join(max_pos_effects))
 
 		return name
 
@@ -268,7 +276,7 @@ ingredients = {
 	# bases
 	'water' : Ingredient("water", {'A':1}, 
 		base=True),
-	'juice' : Ingredient("water", {'A':1, 'B':1, 'C':1, 'D':1}, 
+	'juice' : Ingredient("juice", {'A':1, 'B':1, 'C':1, 'D':1}, 
 		base=True),
 	'blood' : Ingredient("blood", {'D':2, 'E':2, 'G':1, 'H':1}, 
 		base=True),
@@ -280,7 +288,7 @@ ingredients = {
 	'bone' : Ingredient("bone", {'A':1, 'E':1}, 
 		crushed="crushed bone"),
 	'crushed bone' : Ingredient("crushed bone", {'A':1, 'E':1, 'M':1}),
-	'troll eye' : Ingredient("troll eye", {'F':2, 'H':1, 'I':1, 'K':1}, 
+	'troll eye' : Ingredient("troll eye", {'F':2, 'H':1, 'B':1, 'K':1}, 
 		crushed="slime"), 
 	'orc ear' : Ingredient("orc ear", {'F':1, 'G':1, 'J':1}, 
 		crushed="blood"),
