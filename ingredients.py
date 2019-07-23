@@ -69,6 +69,21 @@ class Ingredient():
 			tuple(compound_vector), max_effects_per_ingredient)
 		for e_index in range(len(effects)):
 
+			'''
+			If score -> effect potency and compound_potency -> duration,
+			then brewing potions with more ingredients is just a matter
+			of inventory conservation, as two potions will do basically 
+			the same as a single potion using double the ingredients.
+
+			If score -> duration and compound_potency -> effect potency,
+			then only creating a better potion will make it last longer, 
+			but it's only a single turn as opposed to an extra stat for 
+			the entire duration. Not as satisfying to improve.
+
+			I want to incentivize improvement as much as possible, so 
+			the first is preferred.
+			'''
+
 			effect = effects[e_index]
 			compound_potency = potency(compounds, effect.signature)
 			effect_potency = int(max((10.0 * scores[e_index]), 0))
